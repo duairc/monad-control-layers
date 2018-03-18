@@ -1,0 +1,41 @@
+name:           monad-control-layers
+version:        0.1
+synopsis:       Orphan monad-control instances with layers
+license:        MPL-2.0
+license-file:   LICENSE
+author:         Shane O'Brien
+maintainer:     shane@duairc.com
+stability:      Experimental
+category:       Type
+cabal-version:  >= 1.6
+build-type:     Simple
+homepage:       https://github.com/duairc/monad-control-layers
+bug-reports:    https://github.com/duairc/monad-control-layers/issues
+
+extra-source-files:
+  LICENSE
+
+library
+  include-dirs:
+    include
+
+  hs-source-dirs:
+    src
+
+  exposed-modules:
+    Control.Monad.Trans.Control.Layers
+
+  build-depends:
+    base > 4 && < 6,
+    layers >= 1.0 && < 2,
+    monad-control >= 0.3 && < 2,
+    transformers-base >= 0.1 && < 1
+
+  ghc-options: -Wall
+
+  if impl(ghc >= 7.10)
+    cpp-options: -DOverlapPragma -DOverlappingInstances=NoImplicitParams
+
+source-repository head
+  type:     git
+  location: https://github.com/duairc/monad-control-layers.git
