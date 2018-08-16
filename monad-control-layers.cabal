@@ -13,6 +13,7 @@ homepage:       https://github.com/duairc/monad-control-layers
 bug-reports:    https://github.com/duairc/monad-control-layers/issues
 
 extra-source-files:
+  include/*.h
   LICENSE
 
 library
